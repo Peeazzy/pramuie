@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cantada Dev</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #8e44ad, #3498db);
+      color: white;
+      text-align: center;
+    }
+    h1 { margin-bottom: 20px; }
+    button {
+      padding: 12px 24px;
+      margin: 8px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    #sim { background: #2ecc71; color: white; }
+    #nao { background: #e74c3c; color: white; position: absolute; }
+
+    /* 🔹 Assinatura fixa no cantinho */
+    .assinatura {
+      position: fixed;
+      bottom: 10px;
+      right: 15px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      font-style: italic;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Você topa sair comigo hoje? 💙</h1>
+  <div>
+    <button id="sim" onclick="aceitou()">Sim</button>
+    <button id="nao" onmouseover="foge()">Não</button>
+  </div>
+
+  <!-- 🔹 Assinatura -->
+  <div class="assinatura">~ André 💻💙</div>
+
+  <script>
+    function aceitou() {
+      alert("Sabia que você diria SIM! 😍");
+    }
+
+    function foge() {
+      const btn = document.getElementById("nao");
+      const x = Math.floor(Math.random() * (window.innerWidth - btn.offsetWidth));
+      const y = Math.floor(Math.random() * (window.innerHeight - btn.offsetHeight));
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
+    }
+  </script>
+</body>
+</html>
